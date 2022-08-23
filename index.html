@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Generate Random String</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h3>String Settings</h3>
+        </div>
+        <form>
+          <text class="settings">Generate </text
+          ><input class="settings" type="number" value="10" max="20" /><text
+            class="settings"
+          >
+            random strings (maximum 20).
+          </text>
+          <br />
+          <text class="settings">Each string should contain </text
+          ><input class="settings" type="number" value="10" max="20" /><text
+            class="settings"
+          >
+            characters long (maximum 20).
+          </text>
+          <br />
+          <text class="settings">
+            What characters are allowed to occur in the strings?
+          </text>
+          <br />
+          <div>
+            <ul>
+              <input type="checkbox" id="digits" checked />
+              <label>Numeric digits (0-9)</label>
+              <br />
+              <input type="checkbox" id="uppercase" />
+              <label>Uppercase letters (A-Z)</label>
+              <br />
+              <input type="checkbox" id="lowercase" />
+              <label>Lowercase letters (a-z)</label>
+              <br />
+              <input type="checkbox" id="specialchar" />
+              <label>Special characters</label>
+            </ul>
+          </div>
+        </form>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Strings</button>
+        </div>
+        <!-- <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Generated Strings"
+            aria-label="Generated Strings"
+          ></textarea>
+        </div> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
