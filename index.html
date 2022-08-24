@@ -18,18 +18,22 @@
         </div>
         <form>
           <text class="settings">Generate </text
-          ><input class="settings" type="number" value="10" max="20" /><text
+          ><input
+            id="stringcount"
             class="settings"
-          >
-            random strings (maximum 20).
-          </text>
+            type="number"
+            value="10"
+            max="20"
+          /><text class="settings"> random strings (maximum 20). </text>
           <br />
           <text class="settings">Each string should contain </text
-          ><input class="settings" type="number" value="10" max="20" /><text
+          ><input
+            id="charactercount"
             class="settings"
-          >
-            characters long (maximum 20).
-          </text>
+            type="number"
+            value="10"
+            max="20"
+          /><text class="settings"> characters long (maximum 20). </text>
           <br />
           <text class="settings">
             What characters are allowed to occur in the strings?
@@ -54,14 +58,14 @@
         <div class="card-footer">
           <button id="generate" class="btn">Generate Strings</button>
         </div>
-        <!-- <div class="card-body">
+        <div class="card-body" hidden>
           <textarea
             readonly
-            id="password"
+            id="string"
             placeholder="Generated Strings"
             aria-label="Generated Strings"
           ></textarea>
-        </div> -->
+        </div>
       </div>
     </div>
     <script src="script.js"></script>

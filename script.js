@@ -4,15 +4,17 @@
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+function writeString() {
+  var password = generateStrings();
+  var passwordText = document.querySelector('#string');
+  var card = document.querySelector('.card-body');
 
-  passwordText.value = password;
+  card.hidden = false;
+  passwordText.value = password.join('\n');
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writeString);
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
@@ -79,11 +81,13 @@ var lowerChars = [
 var nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialChars = '~`!#$%^&*+=-[]\\\';,/{}|":<>?';
 
-function generatePassword() {
+function generateStrings() {
+  var stringCount = document.querySelector('#stringcount').value;
+  var characterCount = document.querySelector('#charactercount').value;
+
   // WHEN asked for character types to include in the password
   // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
   var numbers = document.querySelector('#digits').checked;
-
   var lowerCases = document.querySelector('#lowercase').checked;
   var upperCases = document.querySelector('#uppercase').checked;
   var special = document.querySelector('#specialchar').checked;
@@ -111,16 +115,24 @@ function generatePassword() {
   // WHEN all prompts are answered
   // THEN a password is generated that matches the selected criteria
   var randomPasswordGenerated = '';
-  // console.log(possibleValues);
+  var arrStrings = [];
 
-  // loop adding random characters
-  for (var i = 0; i < passwordLength; i++) {
-    randomPasswordGenerated += possibleValues.charAt(
-      Math.floor(Math.random() * possibleValues.length)
-    );
+  // loop adding strings into array
+  for (var i = 0; i < stringCount; i++) {
+    // loop adding random characters
+    for (var j = 0; j < characterCount; j++) {
+      randomPasswordGenerated += possibleValues.charAt(
+        Math.floor(Math.random() * possibleValues.length)
+      );
+    }
+
+    arrStrings.push(randomPasswordGenerated);
+
+    randomPasswordGenerated = '';
   }
 
   // WHEN the password is generated
   // THEN the password is either displayed in an alert or written to the page
-  return randomPasswordGenerated;
+  console.log(arrStrings);
+  return arrStrings;
 }
