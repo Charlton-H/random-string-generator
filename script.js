@@ -6,7 +6,7 @@ var generateBtn = document.querySelector('#generate');
 // Write password to the #password input
 function writeString() {
   var password = generateStrings();
-  var passwordText = document.querySelector('#string');
+  var passwordText = document.querySelector('#output');
   var card = document.querySelector('.card-body');
 
   card.hidden = false;
